@@ -1,0 +1,66 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "newnew",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DestinationDataset_y2o",
+						"type": "DatasetReference"
+					},
+					"name": "sink1",
+					"rejectedDataLinkedService": {
+						"referenceName": "AzureDataLakeStorage2",
+						"type": "LinkedServiceReference"
+					}
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          Column1 as string,",
+				"          {Order Priority} as string,",
+				"          Discount as string,",
+				"          {Unit Price} as string,",
+				"          {Shipping Cost} as string,",
+				"          {Customer ID} as string,",
+				"          {Customer Name} as string,",
+				"          {Ship Mode} as string,",
+				"          {Customer Segment} as string,",
+				"          {Product Category} as string,",
+				"          {Product Sub-Category} as string,",
+				"          {Product Container} as string,",
+				"          {Product Name} as string,",
+				"          {Product Base Margin} as string,",
+				"          Region as string,",
+				"          {State or Province} as string,",
+				"          City as string,",
+				"          {Postal Code} as string,",
+				"          {Order Date} as string,",
+				"          {Ship Date} as string,",
+				"          Profit as string,",
+				"          {Quantity ordered new} as string,",
+				"          Sales as string,",
+				"          {Order ID} as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
+			]
+		}
+	}
+}

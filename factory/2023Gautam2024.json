@@ -1,0 +1,9 @@
+{
+	"name": "2023Gautam2024",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "492b1ce1-7c01-49c3-9153-c3e6dacc816d",
+		"tenantId": "164a4db2-aa36-44a8-bb8d-ca07a8f6812d"
+	}
+}
