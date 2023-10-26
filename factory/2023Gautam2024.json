@@ -1,5 +1,10 @@
 {
 	"name": "2023Gautam2024",
+	"properties": {
+		"globalConfigurations": {
+			"PolicyValidationEnabled": "true"
+		}
+	},
 	"location": "centralindia",
 	"identity": {
 		"type": "SystemAssigned",
